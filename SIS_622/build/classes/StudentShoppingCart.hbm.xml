@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 Mar, 2017 4:03:49 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.rit.datasec.Group3Project.bo.StudentShoppingCart" table="STUDENTSHOPPINGCART">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="student" class="edu.rit.datasec.Group3Project.bo.Student" fetch="join">
+            <column name="STUDENT" />
+        </many-to-one>
+        <many-to-one name="course" class="edu.rit.datasec.Group3Project.bo.Course" fetch="join">
+            <column name="COURSE" />
+        </many-to-one>
+        <many-to-one name="term" class="edu.rit.datasec.Group3Project.bo.Term" fetch="join">
+            <column name="TERM" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

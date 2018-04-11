@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 Mar, 2017 3:26:51 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.rit.datasec.Group3Project.bo.Student" table="STUDENT">
+        <id name="uid" type="int">
+            <column name="UID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="credentials" class="edu.rit.datasec.Group3Project.bo.Credentials" lazy="false" fetch="join">
+            <column name="CREDENTIALS" />
+        </many-to-one>
+        <many-to-one name="personalInfo" class="edu.rit.datasec.Group3Project.bo.PersonalInfo" lazy="false" fetch="join">
+            <column name="PERSONALINFO" />
+        </many-to-one>
+        <property name="firstName" type="java.lang.String">
+            <column name="FIRSTNAME" />
+        </property>
+        <property name="lastName" type="java.lang.String">
+            <column name="LASTNAME" />
+        </property>
+        <property name="middleName" type="java.lang.String">
+            <column name="MIDDLENAME" />
+        </property>
+        <property name="matriculatedOn" type="java.util.Date">
+            <column name="MATRICULATEDON" />
+        </property>
+        <property name="graduationDate" type="java.util.Date">
+            <column name="GRADUATIONDATE" />
+        </property>
+        <property name="graduationCredits" type="int">
+            <column name="GRADUATIONCREDITS" />
+        </property>
+        <property name="creditsEnrolled" type="int">
+            <column name="CREDITSENROLLED" />
+        </property>
+        <property name="creditsGained" type="int">
+            <column name="CREDITSGAINED" />
+        </property>
+        <property name="gpa" type="float">
+            <column name="GPA" />
+        </property>
+    </class>
+</hibernate-mapping>

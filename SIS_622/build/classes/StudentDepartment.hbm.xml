@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6 Mar, 2017 6:47:57 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.rit.datasec.Group3Project.bo.StudentDepartment" table="STUDENTDEPARTMENT">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="student" class="edu.rit.datasec.Group3Project.bo.Student" fetch="join">
+            <column name="STUDENT" />
+        </many-to-one>
+        <many-to-one name="department" class="edu.rit.datasec.Group3Project.bo.Department" fetch="join">
+            <column name="DEPARTMENT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
+
+

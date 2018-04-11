@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 Mar, 2017 3:26:51 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.rit.datasec.Group3Project.bo.PersonalInfo" table="PERSONALINFO" >
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="contactEmail" type="java.lang.String">
+            <column name="CONTACTEMAIL" />
+        </property>
+        <property name="univEmail" type="java.lang.String">
+            <column name="UNIVEMAIL" />
+        </property>
+        <property name="contactNumber" type="java.lang.String">
+            <column name="CONTACTNUMBER" />
+        </property>
+        <property name="emergencyContactEmail" type="java.lang.String">
+            <column name="EMERGENCYCONTACTEMAIL" />
+        </property>
+        <property name="emegencyContactNumber" type="java.lang.String">
+            <column name="EMEGENCYCONTACTNUMBER" />
+        </property>
+        <many-to-one name="emergencyAddress" class="edu.rit.datasec.Group3Project.bo.Address" fetch="join">
+            <column name="EMERGENCYADDRESS" />
+        </many-to-one>
+        <many-to-one name="primaryAddress" class="edu.rit.datasec.Group3Project.bo.Address" fetch="join">
+            <column name="PRIMARYADDRESS" />
+        </many-to-one>
+        <many-to-one name="currentAddress" class="edu.rit.datasec.Group3Project.bo.Address" fetch="join">
+            <column name="CURRENTADDRESS" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

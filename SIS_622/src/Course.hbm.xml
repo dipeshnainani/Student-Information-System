@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 Mar, 2017 3:26:51 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.rit.datasec.Group3Project.bo.Course" table="COURSE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="level" type="int">
+            <column name="LEVEL" />
+        </property>
+        <property name="courseId" type="java.lang.String">
+            <column name="COURSEID" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="capacity" type="int">
+            <column name="CAPACITY" />
+        </property>
+        <property name="waitlistCapacity" type="int">
+            <column name="WAITLISTCAPACITY" />
+        </property>
+        <many-to-one name="department" class="edu.rit.datasec.Group3Project.bo.Department" fetch="join">
+            <column name="DEPARTMENT" />
+        </many-to-one>
+        <many-to-one name="term" class="edu.rit.datasec.Group3Project.bo.Term" fetch="join">
+            <column name="TERM" />
+        </many-to-one>
+        <property name="credits" type="int">
+            <column name="CREDITS" />
+        </property>
+    </class>
+</hibernate-mapping>
